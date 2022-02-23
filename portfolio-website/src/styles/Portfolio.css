@@ -1,0 +1,330 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('PressStart2P-Regular.eot');
+    src: url('PressStart2P-Regular.eot?#iefix') format('embedded-opentype'),
+        url('PressStart2P-Regular.woff2') format('woff2'),
+        url('PressStart2P-Regular.woff') format('woff'),
+        url('PressStart2P-Regular.ttf') format('truetype'),
+        url('PressStart2P-Regular.svg#PressStart2P-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Css that effects entire page*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Press Start 2P";
+}
+#content {
+	background-color: #140212;
+	width: 100%;
+	overflow-x: hidden;
+}
+.blue-text {
+	color: #2DE2E6;
+}
+.pink-text {
+	color: #F706CF;
+}
+h2 {
+	font-size: 75px;
+}
+.section-seperator {
+	height: 200px;
+}
+
+/*hero asset css*/
+#hero {
+    height: 100vh;
+    background-image: url("images/80s-Synthwave-And-Retrowave-Background-Pack-07.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#desktop-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 60px;
+    color: #2DE2E6;
+}
+#title {
+	width: 50vw;
+	padding-left: 15px;
+}
+#navigation {
+	width: 40vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+#navigation a {
+	width: 25%;
+	text-align: center;
+}
+#socials {
+	width: 10vw;
+}
+#name-image-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: 1028px;
+	height: 100%;
+	margin: 0 auto;
+	align-items: center;
+}
+#name-container {
+	color: white;
+}
+.location {
+	
+}
+.name {
+	font-size: 80px;
+}
+.title {
+	font-size: 35px;
+}
+.hero-btns button {
+    width: 40%;
+    margin: 10px auto;
+    height: 50px;
+    background: none;
+    border: medium solid #2DE2E6;
+	color: #2DE2E6;
+    border-radius: 15px;
+	font-size: 20px; 
+}
+#name-container img {
+	
+}
+#profile-img {
+	width: 50vw;
+}
+.img-placholder {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: medium solid #2DE2E6;
+    -webkit-box-shadow: 0px 0px 25px #2DE2E6;
+    box-shadow: 0px 0px 25px #2DE2E6;
+    background-image: url(images/Desktop-wallpaper-cityscape-retro-wave-highway-art-hd-.jpg);
+    background-size: cover;
+}
+/*css for skills section*/
+.skills-container {
+	max-width: 1700px;
+	margin: 0 auto;
+}
+.skills-container h2 {
+	color: #2DE2E6;
+	text-align: center;
+}
+.skills-container > #skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-gap: 1rem;
+}
+.skill {
+	list-style: none;
+	padding: 30px 0;
+}
+.skill-asset {
+    background-image: url(images/Desktop-wallpaper-cityscape-retro-wave-highway-art-hd-.jpg);
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+	transition: height 1s;
+	transition: width 1s;
+	transition: border-radius 2s;
+    border-radius: 736px;
+    background-size: cover;
+	perspective: 1000px;
+}
+.skill-asset:hover {
+	border-radius: 20px;
+	transition: border-radius .3s;
+}
+.flip-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+.skill-asset:hover .flip-inner {
+	transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.flip-front {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.flip-back {
+	transform: rotateY(180deg);
+	padding-top: 20px;
+}
+.flip-back hr {
+	margin: 10px;
+}
+.subskills {
+	text-align: center;
+	list-style: none;
+}
+.subskills li {
+	margin-bottom: 5px;
+}
+.blue {
+	border: medium solid #2DE2E6;
+    -webkit-box-shadow: 0px 0px 17px #2DE2E6;
+    box-shadow: 0px 0px 17px #2DE2E6;
+	color: #2DE2E6;
+}
+.pink {
+	border: medium solid #F706CF;
+    -webkit-box-shadow: 0px 0px 17px #F706CF;
+    box-shadow: 0px 0px 17px #F706CF;
+	color: #F706CF;
+}
+/*secondary skills*/
+.skills-container h3 {
+	color: #2DE2E6;
+	text-align: center;
+}
+/*projects section*/
+#portfolio-container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+#portfolio-container h2 {
+	text-align: center;
+	color: #F706CF;
+}
+.project {
+    border: solid medium #2DE2E6;
+    border-radius: 15px;
+	padding: 30px 0;
+}
+.project h4 {
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+.project h5 {
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+.project p {
+	margin-bottom: 20px;
+}
+.project-split {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	color: white;
+}
+.project-links {
+	flex: 1;
+	min-width: 300px;
+	padding: 0 0 0 20px;
+}
+.project-btn {
+	width: 100%;
+	height: 30px;
+	background: none;
+	border: solid medium #2DE2E6;
+	color: white;
+	margin: 10px 0;
+	border-radius: 10px;
+}
+.project-description {
+	padding: 0 40px;
+	flex: 3;
+	min-width: 400px;
+}
+.project-stack-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.project-stack-container img {
+	width: 100px;
+	height: auto;
+}
+/*css for about section*/
+#about-container {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+#about-container h2 {
+	text-align: center;
+	color: #2DE2E6;
+}
+#about-split {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+#about-text {
+	max-width: 700px;
+	color: white;
+}
+/*css for contact form*/
+#contact-container {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+#contact-container h2 {
+	text-align: center;
+	color: #2DE2E6;
+}
+#contact-form {
+	
+}
+.form-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.form-row input, textarea {
+	background: none;
+	border: none;
+	border-bottom: solid medium #2DE2E6;
+	height: 30px;
+	font-size: 25px;
+	color: #2DE2E6;
+	margin: 10px;
+}
+.form-row input::placeholder, input:ms-input-placeholder, input::-ms-input-placeholder {
+	color: #2DE2E6;
+	opacity: 1;
+}
+.col {
+	flex-grow: 1;
+}
+.submit-btn {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	height: 35px;
+	font-size: 20px;
+	background: none;
+	border: solid medium #2DE2E6;
+	color: #2DE2E6;
+	border-radius: 15px;
+}
