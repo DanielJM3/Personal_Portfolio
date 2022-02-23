@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Portfolio from './container';
+import "./styles/portfolio.css";
+import Container from './container';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Portfolio />
+    <Container />
   </React.StrictMode>,
   document.getElementById('root')
 );
