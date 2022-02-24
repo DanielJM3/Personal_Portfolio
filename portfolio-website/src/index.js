@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./styles/portfolio.css";
+import "./styles/Portfolio.css";
 import Container from './container';
 import reportWebVitals from './reportWebVitals';
 
