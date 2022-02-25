@@ -1,3 +1,4 @@
+import {useState, useEffect, useCallback} from 'react';
 import html from './assets/html_retrowave_glitched.png';
 import css from './assets/CSS_retrowave_glitched.png';
 import js from './assets/js_retrowave_glitched.png';
@@ -29,22 +30,34 @@ function Container() {
 }
 //Hero should go in a seperate file
 function Hero() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+  useEffect(() => {
+    function handleResize() {
+      setDimensions ({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }
+    window.addEventListener('resize', handleResize)
+
+    return _ => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+
   return (
     <div id="hero">
-          <div id="desktop-header">
-                <div id="title">
-                  <h3>DJM Web Solutions</h3>
-                </div>
-                <div id="navigation"> <a>Portfolio</a> <a>Resume</a> <a>About</a> <a>Contact</a> </div>
-                <div id="socials"> <img src="../Instagram off-grey.png" width="auto" height="30" alt=""/> <img src={twitter_white} width="auto" height="30" alt=""/> <img src={linkedin_white} width="auto" height="30" alt=""/> </div>
-              </div>
+              {window.innerWidth > 1200 ? <DesktopNav /> : <MobileNav />}
               <div id="name-image-container">
                 <div id="profile-img">
                   <div className="img-placholder"></div>
                 </div>
                 <div id="name-container">
                   <p className="location"><img src={location_icon} width="30" height="auto" alt=""/>Indiana, United States</p>
-                  <span className="name">Daniel Mendoza</span> <span className="title">Full Stack Web Developer</span>
+                  <p className="name">Daniel Mendoza</p> <p className="title">Full Stack Web Developer</p>
                   <p>I am a full stack web developer based out of the United States. Although I have a degree in computer animation and game development I decided to use the recent COVID-19 pandemic to explore a career in web development and programming.</p>
                   <div className="hero-btns">
                     <button>Resume</button>
@@ -56,6 +69,42 @@ function Hero() {
     );
 }
 
+function DesktopNav() {
+  return (
+      <div id="desktop-header">
+        <div id="title">
+          <h3>DJM Web Solutions</h3>
+        </div>
+        <div id="navigation"> <a>Portfolio</a> <a>Resume</a> <a>About</a> <a>Contact</a> </div>
+        <div id="socials"> <img src="../Instagram off-grey.png" width="auto" height="30" alt=""/> <img src={twitter_white} width="auto" height="30" alt=""/> <img src={linkedin_white} width="auto" height="30" alt=""/> </div>
+      </div>
+    );
+}
+
+function MobileNav() {
+  return (
+      <nav class="navbar">
+      <div class="navbar-container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#food">Category</a></li>
+              <li><a href="#food-menu">Menu</a></li>
+              <li><a href="#testimonials">Testimonial</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+          <h1 class="logo">RS</h1>
+      </div>
+  </nav>
+    );
+}
+
 function Skills() {
   return(
     <div className="skills-container">
@@ -63,7 +112,7 @@ function Skills() {
         <ul id="skills-grid">
           <Skill title="HTML5" color="blue" imageurl={html} subskill1="HTML best practices" subskill2="Bootstrap Framework" subskill3="SEO" subskill4="" />
           <Skill title="CSS3" color="pink" imageurl={css} subskill1="Responsive Web Design" subskill2="Grid and Flexbot" subskill3="CSS Animations" subskill4="" />
-          <Skill title="JAVASCRIPT" color="blue" imageurl={js} subskill1="React Framework" subskill2="OOP" subskill3="JS Animations" subskill4="Fetch API" />
+          <Skill title="JS" color="blue" imageurl={js} subskill1="React Framework" subskill2="OOP" subskill3="JS Animations" subskill4="Fetch API" />
           <Skill title="PYTHON" color="pink" imageurl={python} subskill1="Flask Framework" subskill2="OOP" subskill3="SQL Databases" subskill4="Data Visualization" />
           <Skill title="REACT" color="pink" imageurl={react_icon} subskill1="Hooks" subskill2="" subskill3="" subskill4="" />
           <Skill title="FLASK" color="blue" imageurl={flask} subskill1="Data Storage" subskill2="Form Processing" subskill3="User Management" subskill4="" />
