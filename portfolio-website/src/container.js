@@ -1,4 +1,5 @@
 import {useState, useEffect, useCallback} from 'react';
+import $ from 'jquery';
 import html from './assets/html_retrowave_glitched.png';
 import css from './assets/CSS_retrowave_glitched.png';
 import js from './assets/js_retrowave_glitched.png';
@@ -24,10 +25,15 @@ function Container() {
         <About />
         <Seperator />
         <Contact />
+        <Footer />
       </div>
     </body>
     );
 }
+
+
+
+
 //Hero should go in a seperate file
 function Hero() {
   const [dimensions, setDimensions] = useState({
@@ -75,7 +81,7 @@ function DesktopNav() {
         <div id="title">
           <h3>DJM Web Solutions</h3>
         </div>
-        <div id="navigation"> <a>Portfolio</a> <a>Resume</a> <a>About</a> <a>Contact</a> </div>
+        <NavItems nav="navigation" />
         <div id="socials"> <img src="../Instagram off-grey.png" width="auto" height="30" alt=""/> <img src={twitter_white} width="auto" height="30" alt=""/> <img src={linkedin_white} width="auto" height="30" alt=""/> </div>
       </div>
     );
@@ -91,17 +97,52 @@ function MobileNav() {
               <span class="line line2"></span>
               <span class="line line3"></span>
           </div>
-          <ul class="menu-items">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#food">Category</a></li>
-              <li><a href="#food-menu">Menu</a></li>
-              <li><a href="#testimonials">Testimonial</a></li>
-              <li><a href="#contact">Contact</a></li>
-          </ul>
-          <h1 class="logo">RS</h1>
+          <NavItems nav="menu-items" />
+          <h1 class="logo">DJM</h1>
       </div>
   </nav>
+    );
+}
+
+function NavItems(props) {
+  //smooth scroll nav
+  useEffect(() => {
+    $("#sec-1").click(function() {
+           $('html, body').animate({
+               scrollTop:        $("#portfolio-container").offset().top
+           }, 800);
+        return false;
+       });
+      
+      $("#sec-2").click(function() {
+           $('html, body') .animate({
+               scrollTop:        $("#two").offset().top
+           }, 900);
+        return false;
+       });
+      
+      $("#sec-3").click(function() {
+           $(' html,body').animate({
+               scrollTop:        $("#about-container").offset().top
+           }, 900);
+        return false;
+       });
+      
+      $("#sec-4").click(function() {
+           $('html,body ').animate({
+               scrollTop:        $("#contact-container").offset().top
+           }, 900);
+        return false;
+       });
+  })
+  return (
+    <div className={props.nav}>
+      <a id="sec-1" href="#portfolio-container">Portfolio</a>
+      <a id="sec-2" href="#resume">Resume</a>
+      <a id="sec-3" href="about-container">About</a>
+      <a id="sec-4" href="contact-container">Contact</a>
+    </div>
+    
     );
 }
 
@@ -237,6 +278,16 @@ function Contact() {
     );
 }
 
+function Footer() {
+  return (
+    <footer id="footer-container">
+      <h3>Thanks for reviewing my portfolio!</h3>
+      <p>Website owned and maintained by Daniel Mendoza.</p>
+      <small>&copy; Copyright 2022, DJMWebSolutions</small>
+    </footer>
+    );
+}
+
 //this will go into individual components section
 function Seperator() {
   return(
@@ -249,5 +300,7 @@ function HorizontalLine(props) {
     <hr className="{ props.color }"></hr>
     );
 }
+
+
 
 export default Container;

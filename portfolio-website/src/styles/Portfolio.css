@@ -187,7 +187,7 @@ h2 {
 #name-image-container {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	max-width: 1028px;
 	height: 100%;
 	margin: 0 auto;
@@ -195,6 +195,8 @@ h2 {
 }
 #name-container {
 	color: white;
+	max-width: 600px;
+	min-width: 400px;
 }
 .location {
 	
@@ -219,7 +221,8 @@ h2 {
 	
 }
 #profile-img {
-	width: 50vw;
+	max-width: 600px;
+	min-width: 400px;
 }
 .img-placholder {
     background-color: white;
@@ -236,6 +239,7 @@ h2 {
 .skills-container {
 	max-width: 1700px;
 	margin: 0 auto;
+	margin-bottom: 40px;
 }
 .skills-container h2 {
 	color: #2DE2E6;
@@ -325,10 +329,12 @@ h2 {
 #portfolio-container {
 	max-width: 1024px;
 	margin: 0 auto;
+	margin-bottom: 40px;
 }
 #portfolio-container h2 {
 	text-align: center;
 	color: #F706CF;
+	margin-bottom: 20px;
 }
 .project {
     border: solid medium #2DE2E6;
@@ -391,6 +397,7 @@ h2 {
 #about-container h2 {
 	text-align: center;
 	color: #2DE2E6;
+	margin-bottom: 40px;
 }
 #about-split {
 	display: flex;
@@ -412,6 +419,7 @@ h2 {
 #contact-container h2 {
 	text-align: center;
 	color: #2DE2E6;
+	margin-bottom: 40px;
 }
 #contact-form {
 	
@@ -448,4 +456,18 @@ h2 {
 	border: solid medium #2DE2E6;
 	color: #2DE2E6;
 	border-radius: 15px;
+}
+/*CSS for footer*/
+#footer-container {
+	text-align: center;
+	margin-top: 40px;
+	color: white;
+	margin-bottom: 30px;
+}
+#footer-container h3 {
+	margin-bottom: 20px;
+	text-decoration:  underline;
+}
+#footer-container p {
+	margin-bottom: 15px;
 }
